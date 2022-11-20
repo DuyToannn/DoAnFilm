@@ -20,8 +20,8 @@ export const tvType = {
 
 //call api cate, search ,detail
 //if u want add , u can write it herer..
-const tmdApi = {
-    getMovieList: (type, params) => {
+const tmdbApi = {
+    getMoviesList: (type, params) => {
         const url = 'movie/' + movieType[type];
         return axiosClient.get(url, params);
     },
@@ -51,4 +51,4 @@ const tmdApi = {
     },
 }
 
-export default tmdApi;
+export default tmdbApi;
