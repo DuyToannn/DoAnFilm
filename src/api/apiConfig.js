@@ -5,4 +5,6 @@ const apiConfig = {
     w500Image: (imgPath) => `https://image.tmdb.org/t/p/w500/${imgPath}`
 }
 
+console.log(apiConfig.apiKey);
+
 export default apiConfig;

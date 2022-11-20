@@ -16,8 +16,9 @@ const Routes = () => {
               path='/:category/:id'
               component={Details}
         />
+   
         <Route 
-              path='/:category'
+              path='/:category'      /* catelog film */
               component={Catelog}
         />
         <Route 
