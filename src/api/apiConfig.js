@@ -4,7 +4,6 @@ const apiConfig = {
     originalImage: (imgPath) => `https://image.tmdb.org/t/p/original/${imgPath}`,
     w500Image: (imgPath) => `https://image.tmdb.org/t/p/w500/${imgPath}`
 }
-
-console.log(apiConfig.apiKey);
+//https://api.themoviedb.org/3/movie/popular
 
 export default apiConfig;

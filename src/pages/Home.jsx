@@ -1,9 +1,9 @@
 import React from 'react';
-import Heroslide from '../components/hero-slide/Heroslide';
+import HeroSlide from '../components/hero-slide/HeroSlide';
 const Home = () => {
   return (
     <div>
-       <Heroslide />
+       <HeroSlide />
     </div>
   );
 }

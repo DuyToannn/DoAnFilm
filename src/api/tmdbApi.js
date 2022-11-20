@@ -22,7 +22,7 @@ export const tvType = {
 //if u want add , u can write it herer..
 const tmdbApi = {
     getMoviesList: (type, params) => {
-        const url = 'movie/' + movieType[type];
+        const url = 'movie/' + movieType[type]; //https://api.themoviedb.org/3/movie/popular/api_key
         return axiosClient.get(url, params);
     },
     getTvList: (type, params) => {
