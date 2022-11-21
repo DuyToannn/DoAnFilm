@@ -13,7 +13,7 @@ const Catelog = () => {
   return (
     <>
      <PageHeader>
-      {category === cate.movie ? 'Movie' : 'TV Series'}
+      {category === cate.movie ? 'Movies' : 'TV Series'}
      </PageHeader>
     </>
   )
