@@ -3,7 +3,7 @@ import axiosClient from "./axiosClient";
 export const category = {
     movie: 'movie',
     tv: 'tv'
-}
+}//s
 
 export const movieType = {
     upcoming: 'upcoming',
