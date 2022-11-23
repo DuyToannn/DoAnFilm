@@ -3,11 +3,14 @@ import { Route, Switch } from 'react-router-dom';
 import Home from '../pages/Home';
 import Catelog from '../pages/Catelog';
 import Details from '../pages/Details';
-
+import Login from '../pages/Login';
+import Signup from '../pages/Signup';
 //Creact url router
 const Routes = () => {
   return (
     <Switch>
+
+      
         <Route 
               path='/:category/search/:keyword'
               component={Catelog}
@@ -21,6 +24,16 @@ const Routes = () => {
               path='/:category'      /* catelog film */
               component={Catelog}
         />
+        {/* <Route 
+              path='/login'
+              exact
+              component={Login}
+        />
+        <Route 
+              path='/signup'
+              exact
+              component={Signup}
+        /> */}
         <Route 
               path='/'
               exact
