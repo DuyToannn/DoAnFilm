@@ -18,7 +18,19 @@ const headerNav = [
     {
         display: 'TV Series',
         path: '/tv'
-    }
+    },
+    {
+        display: 'Love',
+        path: '/love'
+    },
+    // {
+    //     display: 'Đăng nhập',
+    //     path: '/login'
+    // },
+    // {
+    //     display: 'Đăng ký',
+    //     path: '/signup'
+    // }
 ];
 
 const Header = () => {
