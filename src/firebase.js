@@ -1,12 +1,19 @@
-import { getAuth } from "firebase/auth";
-import { initializeApp } from "firebase/auth";
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/auth';
+import 'firebase/compat/firestore';
+
 const firebaseConfig = {
-    apiKey: "AIzaSyCgZgzlR1Y1iQmTSkZ4RwgBoHxnfVsz4g0",
-    authDomain: "do-an-film.firebaseapp.com",
-    projectId: "do-an-film",
-    storageBucket: "do-an-film.appspot.com",
-    messagingSenderId: "484402304579",
-    appId: "1:484402304579:web:c057a2a867155af02ce6f6"
+    apiKey: "AIzaSyDaf5DuviSFnHs0Q1aLYXazA5LC9TwPzY4",
+    authDomain: "chillflix-doan.firebaseapp.com",
+    projectId: "chillflix-doan",
+    storageBucket: "chillflix-doan.appspot.com",
+    messagingSenderId: "941254367396",
+    appId: "1:941254367396:web:3a60378db3e16902782e31"
   };
-  const app = initializeApp(firebaseConfig);
-  export const firebaseAuth = getAuth(app);
+
+  const firebaseApp = firebase.initializeApp(firebaseConfig);
+  const db = firebaseApp.firestore();
+  const auth = firebase.auth();
+
+  export { auth };
+  export default db;
