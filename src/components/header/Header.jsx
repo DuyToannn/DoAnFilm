@@ -6,6 +6,8 @@ import './header.scss';
 
 import logo from '../../assets/loi.png';
 
+import avt from './account.png'
+import { useHistory } from 'react-router-dom';
 const headerNav = [
     {
         display: 'Home',
@@ -19,22 +21,11 @@ const headerNav = [
         display: 'TV Series',
         path: '/tv'
     },
-    {
-        display: 'Love',
-        path: '/love'
-    },
-    // {
-    //     display: 'Đăng nhập',
-    //     path: '/login'
-    // },
-    // {
-    //     display: 'Đăng ký',
-    //     path: '/signup'
-    // }
+
 ];
 
 const Header = () => {
-
+    const history = useHistory();
     const { pathname } = useLocation();
     const headerRef = useRef(null);
 
@@ -57,7 +48,7 @@ const Header = () => {
     return (
         <div ref={headerRef} className="header">
             <div className="header__wrap container">
-                <div className="logo">
+                <div className="logo" onClick={()=> history.push("/")}>
                     <img src={logo} alt="" />
                 </div>
                 <ul className="header__nav">
@@ -68,8 +59,10 @@ const Header = () => {
                                     {e.display}
                                 </Link>
                             </li>
+
                         ))
                     }
+                    <img onClick={() => history.push("/profile")} src={avt} alt="" className="nav__logo" />
                 </ul>
             </div>
         </div>
