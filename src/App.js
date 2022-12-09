@@ -3,14 +3,15 @@ import './assets/boxicons-2.0.7/css/boxicons.min.css'
 import './App.scss';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Header from './components/header/Header';
 import Footer from './components/footer/Footer';
 import Routes from './config/Routes';
 import LoginScreen from './components/screens/LoginScreen';
 import { auth } from './firebase';
 import { login, logout, selectUser } from '../src/feafures/userSlice';
+import ProfileScreen from './components/screens/ProfileScreen';
+
 function App() {
   const user = useSelector(selectUser);
   const dispatch = useDispatch()
@@ -24,7 +25,7 @@ function App() {
             email: userAuth.email
           }))
       } else {
-        dispatch(logout)
+        dispatch(logout())
       }
     });
     return unsub;
@@ -43,7 +44,9 @@ function App() {
               <Footer />
             </>
           )} />
+
         )}
+
       </BrowserRouter>
     </>
   );
