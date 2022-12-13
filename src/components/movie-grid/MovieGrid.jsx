@@ -18,7 +18,7 @@ const MovieGrid = props => {
         const getList = async () => {
             let response = null;
             if (keyword === undefined) {
-                const params = {};
+                const params = { language:'vi-VN'};
                 switch (props.category) {
                     case category.movie:
                         response = await tmdbApi.getMoviesList(movieType.upcoming, { params });
@@ -45,7 +45,8 @@ const MovieGrid = props => {
         let response = null;
         if (keyword === undefined) {
             const params = {
-                page: page + 1
+                page: page + 1,
+                language:'vi-VN'
             };
             switch (props.category) {
                 case category.movie:
@@ -75,7 +76,7 @@ const MovieGrid = props => {
             <div className="movie-grid">
                 {
                     items.map((item, i) => <MovieCard category={props.category} item={item} key={i} />)
-                }
+                }  
             </div>
             {
                 page < totalPage ? (

@@ -5,8 +5,8 @@ import Iframe from 'react-iframe'
 import tmdbApi from '../../api/tmdbApi';
 import apiConfig from '../../api/apiConfig';
 
-const VideoList = () => {
 
+const WatchList = () => {
     const { category, id } = useParams();
     const [item, setItem] = useState(null);
     useEffect(() => {
@@ -20,21 +20,21 @@ const VideoList = () => {
     }, [category, id]);
     return (
         <>
-            {
-                item && (
-                    <>     
-                        <Iframe url={`https://www.2embed.to/embed/tmdb/movie?id=${item.id}`}
-                            width="100%"
-                            height="620px"
-                            id=""
-                            className=""
-                            display="block"
-                            position="relative" />
-                    </>
-                )
-            }
-        </>
+        {
+            item && (
+                <>     
+                    <Iframe url={`https://www.2embed.to/embed/tmdb/movie?id=${item.id}`}
+                        width="100%"
+                        height="620px"
+                        id=""
+                        className=""
+                        display="block"
+                        position="relative" />
+                </>
+            )
+        }
+    </>
     )
 }
 
-export default VideoList
+export default WatchList

@@ -10,11 +10,11 @@ import avt from './account.png'
 import { useHistory } from 'react-router-dom';
 const headerNav = [
     {
-        display: 'Home',
+        display: 'Trang chủ',
         path: '/'
     },
     {
-        display: 'Movies',
+        display: 'Phim Hot',
         path: '/movie'
     },
     {

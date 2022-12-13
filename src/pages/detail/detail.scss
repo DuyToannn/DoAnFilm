@@ -1,7 +1,9 @@
 @use "../../scss/" as *;
+
 .test {
     font-size: 10px;
 }
+
 .banner {
     height: 50vh;
     position: relative;
@@ -40,8 +42,8 @@
     padding: 0 2rem;
 
     &__poster {
-       flex: 1;
-     
+        flex: 1;
+
 
         @include mobile {
             display: none;
@@ -66,7 +68,7 @@
             padding-left: 0;
         }
 
-        & > * {
+        &>* {
             margin-bottom: 2rem;
         }
 
@@ -76,7 +78,7 @@
         }
 
         .genres {
-            & > * ~ * {
+            &>*~* {
                 margin-left: 0.5rem;
             }
 
@@ -91,21 +93,29 @@
         }
     }
 }
+.section__header {
+    h2{  font-size: 15px;}
+}
 
 .casts {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
-    gap: 10px;
+    gap: 55px;
+    margin-top: 15px;
+
 
     &__item {
         &__img {
-            padding-top: 160px;
+            padding-top: 120px;
             background-size: cover;
             margin-bottom: 0.5rem;
+            border-radius: 100%;
         }
 
         &__name {
-            font-size: 0.8rem;
+            font-size: 12px;
+            font-weight: 600;
+            text-align: center;
         }
     }
 }
