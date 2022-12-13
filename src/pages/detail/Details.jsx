@@ -3,26 +3,43 @@ import { useParams } from 'react-router';
 import tmdbApi from '../../api/tmdbApi';
 import apiConfig from '../../api/apiConfig';
 import './detail.scss';
+import { category } from '../../api/tmdbApi';
 import CastList from './CastList';
 import VideoList from './VideoList';
 import MovieList from '../../components/movie-list/MovieList';
-const Details = () => {
+import { Link } from 'react-router-dom';
+import Button from '../../components/button/Button';
 
+import BtnWatch from '../watch/BtnWatch';
+import MovieCard from '../../components/movie-card/MovieCard';
+const Details = () => {
   const { category, id } = useParams();
   const [item, setItem] = useState(null);
-
   useEffect(() => {
     const getDetail = async () => {
       //const params = { page: 1, language:'vi-VN' }
-      const response = await tmdbApi.detail(category, id, { params: { language:'vi-VN' } });
+      const response = await tmdbApi.detail(category, id, { params: { language: 'vi-VN' } });
       setItem(response);
       window.scrollTo(0, 0);
     }
     getDetail();
   }, [category, id]);
-  return (
 
+  function toHoursAndMinutes(totalMinutes) {
+    const minutes = totalMinutes % 60;
+    const hours = Math.floor(totalMinutes / 60);
+    return `${padTo2Digits(hours)} giờ ${padTo2Digits(minutes)} phút`;
+  }
+  function padTo2Digits(num) {
+    return num.toString().padStart(2);
+  }
+  function reformatDate(dateStr) {
+    var dArr = dateStr.split("-");
+    return dArr[2] + "/" + dArr[1] + "/" + dArr[0].substring(0); 
+  }
+  return (
     <>
+
       {
         item && (
           <>
@@ -31,6 +48,7 @@ const Details = () => {
               <div className="movie-content__poster">
                 <div className="movie-content__poster__img" style={{ backgroundImage: `url(${apiConfig.originalImage(item.poster_path || item.backdrop_path)})` }}>
                 </div>
+                <BtnWatch item={item} category={category} />
               </div>
               <div className="movie-content__info">
                 <h1 className="title">
@@ -43,10 +61,14 @@ const Details = () => {
                     ))
                   }
                 </div>
+                <p className="runtime">{toHoursAndMinutes(item.runtime)}</p>
+                <p class="vote-film">IMDB {item.vote_average.toFixed(1)}</p>
+                <p class="release-film">KHỞI CHIẾU {reformatDate(item.release_date)}</p>
                 <p className="overview">{item.overview}</p>
                 <div className="cast">
                   <div className="section__header">
-                    <h2>Diễn viên</h2>
+                    <h2>DIỄN VIÊN</h2>
+
                   </div>
                   <CastList id={item.id} />
                 </div>

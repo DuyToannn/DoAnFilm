@@ -6,4 +6,8 @@ const apiConfig = {
     w500Image: (imgPath) => `https://image.tmdb.org/t/p/w500/${imgPath}`
 }
 
+// const testAPI = {
+//     filmURL:''
+// }
+
 export default apiConfig;
