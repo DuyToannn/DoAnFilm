@@ -9,7 +9,7 @@ import VideoList from './VideoList';
 import MovieList from '../../components/movie-list/MovieList';
 import { Link } from 'react-router-dom';
 import Button from '../../components/button/Button';
-
+import imdb from '../../assets/imdb.png'
 import BtnWatch from '../watch/BtnWatch';
 import MovieCard from '../../components/movie-card/MovieCard';
 const Details = () => {
@@ -62,8 +62,9 @@ const Details = () => {
                   }
                 </div>
                 <p className="runtime">{toHoursAndMinutes(item.runtime)}</p>
-                <p class="vote-film">IMDB {item.vote_average.toFixed(1)}</p>
+                <p class="vote-film"><img className='img-imdb' src={imdb} alt="" />{item.vote_average.toFixed(1)}</p>
                 <p class="release-film">KHỞI CHIẾU {reformatDate(item.release_date)}</p>
+                <p className="character">{item.character}</p>
                 <p className="overview">{item.overview}</p>
                 <div className="cast">
                   <div className="section__header">
@@ -76,11 +77,12 @@ const Details = () => {
             </div>
             <div className="container">
               <div className="section mb-3">
+                <h3 className='title-trailer'>TRAILER</h3>
                 <VideoList id={item.id} />
               </div>
               <div className="section mb-3">
                 <div className="section__header mb-2">
-                  <h2>Phim tương tự</h2>
+                  <h2>PHIM TƯƠNG TỰ</h2>
                 </div>
                 <MovieList category={category} type="similar" id={item.id} />
               </div>

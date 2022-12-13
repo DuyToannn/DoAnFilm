@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './LoginScreen.scss';
-import logo from './logonetflix.png'
+import loi from '../../assets/loi.png'
 import background from './background.jpg'
 import SignUpScreen from './SignUpScreen';
 const LoginScreen = () => {
@@ -8,7 +8,7 @@ const LoginScreen = () => {
     return (
         <div className='loginScreen' style={{ backgroundImage: `url(${background})` }}>
             <div className="loginScreen__background">
-                <img className='loginScreen__logo' src={logo} alt="" />
+                <img className='loginScreen__logo' src={loi} alt="" />
                 <button  onClick={() => setSignIn(true)} className='loginScreen__button'>Đăng nhập</button>
                 <div className='loginScreen__gradient' />
             </div>

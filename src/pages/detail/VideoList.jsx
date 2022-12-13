@@ -1,40 +1,62 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { useParams } from 'react-router';
-import Iframe from 'react-iframe'
 import tmdbApi from '../../api/tmdbApi';
 import apiConfig from '../../api/apiConfig';
+import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+import { SwiperSlide, Swiper } from 'swiper/react';
 
-const VideoList = () => {
-
-    const { category, id } = useParams();
-    const [item, setItem] = useState(null);
+const VideoList = props => {
+    const { category } = useParams();
+    const [videos, setVideos] = useState([]);
     useEffect(() => {
-        const getDetail = async () => {
-            //const params = { page: 1, language:'vi-VN' }
-            const response = await tmdbApi.detail(category, id, { params: { language: 'vi-VN' } });
-            setItem(response);
-            window.scrollTo(0, 0);
+        const getVideos = async () => {
+            const res = await tmdbApi.getVideos(category, props.id);
+            setVideos(res.results.slice(0, 5));
         }
-        getDetail();
-    }, [category, id]);
+        getVideos();
+    }, [category, props.id]);
     return (
         <>
-            {
-                item && (
-                    <>     
-                        <Iframe url={`https://www.2embed.to/embed/tmdb/movie?id=${item.id}`}
-                            width="100%"
-                            height="620px"
-                            id=""
-                            className=""
-                            display="block"
-                            position="relative" />
-                    </>
-                )
-            }
+            <Swiper
+                spaceBetween={30}
+                slidesPerView={3}
+            >
+                {
+                    videos.map((item, i) => (
+                        <SwiperSlide key={i} className="swiper-slide-trailer">
+                            <div>
+                                <Video item={item} />
+                            </div>
+                        </SwiperSlide>
+                    ))
+                }
+
+            </Swiper>
+
         </>
     )
 }
-
+const Video = props => {
+    const item = props.item;
+    const iframeRef = useRef(null);
+    useEffect(() => {
+        const height = iframeRef.current.offsetWidth * 9 / 16 + 'px';
+        iframeRef.current.setAttribute('height', height)
+    }, [])
+    return (
+        //https://hd.1080phim.com/share/214f9424bd924def149681f47e629ad7
+        <div className="video">
+            <div className="video__title">
+                <iframe
+                    src={`http://www.youtube.com/embed/${item.key}`}
+                    ref={iframeRef}
+                    width="100%"
+                    title="video"
+                    allowFullScreen="true"
+                ></iframe>
+            </div>
+        </div>
+    )
+}
 export default VideoList

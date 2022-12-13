@@ -69,7 +69,7 @@
         }
 
         &>* {
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
         }
 
         .title {
@@ -78,6 +78,8 @@
         }
 
         .genres {
+            margin-bottom: 40px;
+
             &>*~* {
                 margin-left: 0.5rem;
             }
@@ -93,9 +95,12 @@
         }
     }
 }
-.section__header {
-    h2{  font-size: 15px;}
-}
+
+// .section__header {
+//     h2 {
+//         font-size: 15px;
+//     }
+// }
 
 .casts {
     display: grid;
@@ -126,4 +131,18 @@
     &__title {
         margin-bottom: 1.5rem;
     }
+}
+
+.vote-film{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+    font-weight: 700;
+    .img-imdb {
+        max-width: 40px;
+    }
+}
+.swiper-slide-trailer {
+    width: 100%;
 }

@@ -1,19 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-
 import './movie-list.scss';
 import { SwiperSlide, Swiper } from 'swiper/react';
-import { Link } from 'react-router-dom';
-import Button from '../button/Button';
 import tmdbApi, { category } from '../../api/tmdbApi';
-import apiConfig from '../../api/apiConfig';
-import { FaHeart, FaRegHeart } from 'react-icons/fa';
 import MovieCard from '../movie-card/MovieCard';
-import { dbDoc } from '../../firebase';
-import userSlice from '../../feafures/userSlice';
-import { arrayUnion, doc, updateDoc } from 'firebase/firestore';
-import { selectUser } from '../../feafures/userSlice';
-import { useSelector } from 'react-redux';
+
 const MovieList = props => {
     const [items, setItems] = useState([]);
     useEffect(() => {
