@@ -34,14 +34,14 @@ const SignUpScreen = () => {
     return (
         <div className='signupScreen'>
             <form action="">
-                <h1>Sign in</h1>
+                <h1>Đăng nhập</h1>
                 <input ref={emailRef} type="email" placeholder='Email' />
                 <input ref={passwordRef} type="Password" placeholder='Mật khẩu' />
-                <button tyoe="submit" onClick={signIn}>Sign in</button>
+                <button tyoe="submit" onClick={signIn}>Đăng nhập</button>
 
                 <h4 className='mt-3'>
-                    <span className="signupScreen__gray">New to Chillflix?</span> 
-                    <span className="signupScreen__link" onClick={register}>Sign Up now.</span>
+                    <span className="signupScreen__gray">Tạo tài khoản Chillflix?</span> 
+                    <span className="signupScreen__link" onClick={register}>Đăng ký ngay</span>
                 </h4>
             </form>
         </div>

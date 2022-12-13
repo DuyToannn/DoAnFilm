@@ -7,15 +7,13 @@ import { category, movieType, tvType } from '../api/tmdbApi';
 import { FaHeart, FaRegHeart } from 'react-icons/fa';
 const Home = () => {
   
-  const [like, setLike] = useState(false);
- 
   return (
     <div>
       <HeroSlide />
       <div className="container">
         <div className="section mb-3">
           <div className="section__header mb-2">
-            <h2>Treding Movies</h2>
+            <h2>PHIM THỊNH HÀNH</h2>
             <Link to="/movie">
               <OutlineButton className="small">Xem thêm</OutlineButton>
             </Link>
@@ -26,7 +24,7 @@ const Home = () => {
 
         <div className="section mb-3">
           <div className="section__header mb-2">
-            <h2>Top Rated Movies</h2>
+            <h2>TOP XẾP HẠNG</h2>
             <Link to="/movie">
               <OutlineButton className="small">Xem thêm</OutlineButton>
             </Link>
@@ -36,7 +34,7 @@ const Home = () => {
 
         <div className="section mb-3">
           <div className="section__header mb-2">
-            <h2>Trending TV</h2>
+            <h2>Chương trình TV</h2>
             <Link to="/tv">
               <OutlineButton className="small">Xem thêm</OutlineButton>
             </Link>
