@@ -7,6 +7,11 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    
+    .loginScreen__background {
+        // z-index: 999;
+        position: relative;
+    }
 
     .loginScreen__logo {
         position: fixed;
@@ -48,9 +53,20 @@
     margin-right: auto;
     margin: auto;
     text-align: center;
-    z-index: 1;
+    // z-index: 999999;
     color: #fff;
     padding: 20px;
+
+    #video-Login {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        z-index: -5;
+        object-fit: cover;
+        top: -201px;
+        height: 145vh;
+    }
 
 
     h1 {

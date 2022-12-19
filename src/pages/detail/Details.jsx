@@ -33,10 +33,10 @@ const Details = () => {
   function padTo2Digits(num) {
     return num.toString().padStart(2);
   }
-  function reformatDate(dateStr) {
-    var dArr = dateStr.split("-");
-    return dArr[2] + "/" + dArr[1] + "/" + dArr[0].substring(0); 
-  }
+  // function reformatDate(dateStr) {
+  //   var dArr = dateStr.split("-");
+  //   return dArr[2] + "/" + dArr[1] + "/" + dArr[0].substring(0); 
+  // }
   return (
     <>
 
@@ -63,7 +63,7 @@ const Details = () => {
                 </div>
                 <p className="runtime">{toHoursAndMinutes(item.runtime)}</p>
                 <p class="vote-film"><img className='img-imdb' src={imdb} alt="" />{item.vote_average.toFixed(1)}</p>
-                <p class="release-film">KHỞI CHIẾU {reformatDate(item.release_date)}</p>
+                <p class="release-film">KHỞI CHIẾU {item.release_date}</p>
                 <p className="character">{item.character}</p>
                 <p className="overview">{item.overview}</p>
                 <div className="cast">
