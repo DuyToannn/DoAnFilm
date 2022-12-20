@@ -43,7 +43,7 @@ const SignUpScreen = () => {
 
                 <h4 className='mt-3'>
                     <span className="signupScreen__gray">Tạo tài khoản Chillflix?</span> 
-                    <span className="signupScreen__link" onClick={register}>Đăng ký ngay</span>
+                    {/* <span className="signupScreen__link" onClick={register}>Đăng ký ngay</span> */}
                 </h4>
             </form>
         </div>
