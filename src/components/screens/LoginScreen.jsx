@@ -29,7 +29,7 @@ const LoginScreen = () => {
                 >
                     <source
                         src="https://raw.githubusercontent.com/fuocy/video/master/endgame.mp4"
-           
+                        type="video/mp4" 
                     />
 
 
