@@ -11,7 +11,7 @@ const SignUpScreen = () => {
             emailRef.current.value,
             passwordRef.current.value
         ).then((authUser)=> {
-            console.log(authUser);
+            console.log("Cảm ơn bạn đã đăng ký");
         })
         .catch((error) => {
             alert(error.message)
@@ -31,12 +31,14 @@ const SignUpScreen = () => {
             alert(error.message)
         })
     }
+
     return (
         <div className='signupScreen'>
+
             <form action="">
                 <h1>Đăng nhập</h1>
-                <input ref={emailRef} type="email" placeholder='Email' />
-                <input ref={passwordRef} type="Password" placeholder='Mật khẩu' />
+                <input ref={emailRef} disabled type="email" placeholder='Coming soon' />
+                <input ref={passwordRef} disabled type="Password" placeholder='23/12' />
                 <button tyoe="submit" onClick={signIn}>Đăng nhập</button>
 
                 <h4 className='mt-3'>
