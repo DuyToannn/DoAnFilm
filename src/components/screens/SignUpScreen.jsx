@@ -37,8 +37,8 @@ const SignUpScreen = () => {
 
             <form action="">
                 <h1>Đăng nhập</h1>
-                <input ref={emailRef}  type="email" placeholder='Coming soon' />
-                <input ref={passwordRef}  type="Password" placeholder='23/12' />
+                <input ref={emailRef}  type="email" placeholder='Tài khoản' />
+                <input ref={passwordRef}  type="Password" placeholder='Mật khẩu' />
                 <button tyoe="submit" onClick={signIn}>Đăng nhập</button>
 
                 <h4 className='mt-3'>
