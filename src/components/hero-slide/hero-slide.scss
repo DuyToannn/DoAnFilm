@@ -50,17 +50,27 @@
             }
 
             .title {
-                font-size: 5rem;
+                font-size: 4rem;
                 font-weight: 700;
                 line-height: 1;
 
                 @include tablet {
                     font-size: 4rem;
                 }
+                
             }
 
             .overview {
                 font-weight: 700;
+                display:-webkit-box;
+                -webkit-line-clamp:3;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                word-break: break-word;
+                @include mobile {
+                    font-size: 14px;
+                }
             }
 
             .btns > * ~ * {
@@ -73,12 +83,13 @@
                 opacity: 0;
                 transform: translateY(-100px);
                 transition: transform 0.5s ease, opacity 0.5s ease;
+
             }
         }
 
         &__poster {
             flex: 1;
-            @include flex(center, flex-start);
+            @include flex(center, center);
             position: relative;
 
             img {

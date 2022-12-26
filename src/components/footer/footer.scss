@@ -13,11 +13,13 @@
         &__logo{
             @include flex(center, center);
             margin-bottom: 3rem;
-
+           img {
+            margin-right: 0px;
+           }
         }
         &__menus{
             display: grid;
-             grid-template-columns: repeat(3, 1fr);
+         
              justify-items: center;
              
              @include mobile{

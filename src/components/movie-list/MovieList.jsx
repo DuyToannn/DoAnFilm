@@ -10,7 +10,7 @@ const MovieList = props => {
     useEffect(() => {
         const getList = async () => {
             let response = null;
-            const params = { language:'vi-VN'};
+            const params = { language: 'vi-VN' };
             if (props.type !== 'similar') {
                 switch (props.category) {
                     case category.movie:
@@ -33,6 +33,16 @@ const MovieList = props => {
                 grabCursor={true}
                 spaceBetween={10}
                 slidePerViews={'auto'}
+                breakpoints={{
+                    576: {
+                        width: 576,
+                        slidesPerView: 1,
+                    },
+                    768: {
+                        width: 768,
+                        slidesPerView: 3,
+                    },
+                }}
             >
                 {
                     items.map((item, i) => (

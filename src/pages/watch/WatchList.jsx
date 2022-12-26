@@ -23,10 +23,10 @@ const WatchList = () => {
         {
             item && (
                 <>     
-                    <Iframe url={`https://www.2embed.to/embed/tmdb/movie?id=${item.id}`}
+                    <Iframe url={`${apiConfig.filmUrl}${item.id}`}
                         width="100%"
                         height="620px"
-                        id=""
+                        id={item.id}
                         className=""
                         display="block"
                         position="relative" />

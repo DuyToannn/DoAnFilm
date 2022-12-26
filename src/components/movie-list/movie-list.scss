@@ -1,15 +1,14 @@
 @use '../../scss/breackpoint' as *;
-
+@use "../../scss/" as *;
 .movie-list{
     .swiper-slide {
-        width: 15% !important;
+        width: 15%;
+        @include mobile {
+            width: 50% !important ;
+            
+        }
     }
-    @include tablet {
-        width: 30%;
-    }
-    @include mobile {
-        width: 40%;
-    }
+ 
 }
 
 .like-movie {
