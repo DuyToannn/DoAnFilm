@@ -77,7 +77,9 @@ const Details = () => {
             </div>
             <div className="container">
               <div className="section mb-3">
-                <h3 className='title-trailer'>TRAILER</h3>
+              <div className="section__header mb-2">
+                  <h2>TRAILER</h2>
+                </div>
                 <VideoList id={item.id} />
               </div>
               <div className="section mb-3">

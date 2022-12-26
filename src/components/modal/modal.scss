@@ -26,6 +26,10 @@
         transform: translateY(-250px);
         transition: transform .6s ease, opacity .6s ease;
         position: relative;
+        @include mobile {
+           padding: 0;
+           width: 100%;
+        }
 
         &__close {
             position: absolute;

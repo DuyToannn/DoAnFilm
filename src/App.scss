@@ -5,7 +5,7 @@
 * {
   padding: 0;
   margin: 0;
-  box-sizing:  border-box;
+  box-sizing: border-box;
 }
 
 html {
@@ -28,7 +28,7 @@ body {
 
   background-color: $body-bg;
   color: $txt-color;
-  
+
   @include mobile {
     margin-bottom: 3rem;
   }
@@ -45,7 +45,8 @@ a {
   }
 }
 
-button, input {
+button,
+input {
   outline: 0;
 }
 
@@ -79,5 +80,41 @@ iframe {
 }
 
 .section__header {
+  border-bottom: 1px solid #1a1a1a;
   @include flex(center, space-between)
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+
+.section__header {
+  a:hover > .btn-outline > svg {
+    fill: #ff0000;
+  }
+
+  h2 {
+    font-family: 'Roboto', sans-serif !important;
+    font-size: 1.5em;
+    color: #b1a21e;
+  }
+
+  .btn-outline {
+    border: unset;
+    font-size: 16px;
+    color: #ccc;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    svg {
+      fill: #ccc;
+      height: 1em;
+      vertical-align: middle;
+    }
+  }
+
+  .btn-outline:hover {
+    box-shadow: unset;
+    background-color: unset;
+    box-shadow: unset;
+  }
 }

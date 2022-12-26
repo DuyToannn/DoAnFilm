@@ -24,14 +24,14 @@ const Watch = () => {
       {
         item && (
           <>
+            <div className='Watch-film'>
+              <WatchList />
+            </div>
             <div className="container">
-              <div className='Watch-film'>
-                <WatchList />
-              </div>
-              <div className="title-film">
-                <h1>{item.title || item.name}</h1>
-                <h3>{item.original_title}</h3>
-              </div>
+            <div className="title-film">
+              <h1>{item.title || item.name}</h1>
+              <h3>{item.original_title}</h3>
+            </div>
             </div>
           </>
         )
